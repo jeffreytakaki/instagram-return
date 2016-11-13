@@ -1,0 +1,22 @@
+<html>
+<head>
+	<title>Instagram API</title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+</head>
+<body>
+
+<div class="api-header">
+	<h1>Instagram Return Call here:</h1>
+</div>
+<div id="app"></div>
+
+<script type="text/javascript">
+$.get('https://api.instagram.com/oauth/authorize/?client_id=fc73027687a140a1b33dc906183889cb&redirect_uri=http://funnycaption.herokuapp.com&response_type=token', function(data, status) {
+		$('#app').append(data)
+		$('#app').append(status)
+        alert("Data: " + data + "\nStatus: " + status);
+    });
+
+</script>
+</body>
+</html>
